@@ -14,6 +14,8 @@ export const COLORS = {
     red: "#E74C3C",
     purple : "#9E75C3",
     orange : "#E67E22",
+    pink : "#F08080",
+    lightGrey: "#EAEDED",
 };
 export const SIZES ={
     h1: 24,
