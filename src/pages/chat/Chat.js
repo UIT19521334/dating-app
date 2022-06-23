@@ -14,7 +14,7 @@ const Chat = ({navigation}) => {
           <Text style={styles.title}  >You have no match yet</Text>
           <TouchableOpacity style={styles.button}
             onPress={()=>{
-              navigation.navigate("Match");
+              navigation.navigate("ChatNav");
             }}
           >
               <Text style={{color: COLORS.white, textAlign: "center"}} >Discover New People</Text>
