@@ -136,7 +136,9 @@ const Detail = ({ navigation, route }) => {
                 <View style={{ paddingBottom: SIZES.height / 10 }}>
                     {
                         DATA[position].interests.map((item, index) => (
-                            <Text key={index} style={styles.interestedText} >{item}</Text>
+                            <View  key={index} style={{alignSelf: 'flex-start'}}>
+                                <Text style={styles.interestedText} >{item}</Text>
+                            </View>
                         ))
                     }
                 </View>

@@ -77,11 +77,12 @@ const styles = StyleSheet.create({
         padding: 20,
         marginLeft: 20,
         margin : 5,
-        borderColor: COLORS.orange,
+        borderColor: COLORS.red,
         borderWidth: 1.5,
         borderRadius: 10,
+        
         fontSize: SIZES.h5,
-        color: COLORS.orange,
+        color: COLORS.red,
         fontWeight: "500"
     },
     groupButton : {

@@ -4,13 +4,39 @@ import styles from './styles'
 import { COLORS, SIZES } from '../../components/constans/theme'
 import { Center, HStack } from 'native-base'
 import Entypo from "react-native-vector-icons/Entypo";
-const School = () => {
+import AsyncStorage from "@react-native-async-storage/async-storage";
+const School = ({navigation}) => {
   const [index, setIndex] = useState(0)
+  const setSchool=async()=>{
+    setIndex(0);
+    await AsyncStorage.setItem("SCHOOL","JCE, Bangalore");
+    navigation.goBack();
+  }
+  const setSchool2=async()=>{
+    setIndex(1);
+    await AsyncStorage.setItem("SCHOOL","JCE, Bangalore2");
+    navigation.goBack();
+  }
+  const setSchool3=async()=>{
+    setIndex(2);
+    await AsyncStorage.setItem("SCHOOL","JCE, Bangalore3");
+    navigation.goBack();
+  }
+  const setSchool4=async()=>{
+    setIndex(3);
+    await AsyncStorage.setItem("SCHOOL","JCE, Bangalore4");
+    navigation.goBack();
+  }
+  const setSchoolNone=async()=>{
+    setIndex(4);
+    await AsyncStorage.setItem("SCHOOL","None");
+    navigation.goBack();
+  }
   return (
     <View style={{ marginTop: 5, backgroundColor: COLORS.white, height: SIZES.height }} >
       <Center marginTop={5}>
         <TouchableOpacity
-          onPress={()=> setIndex(0)}
+          onPress={()=> setSchool()}
         >
           <HStack
             space={2}
@@ -35,7 +61,7 @@ const School = () => {
             }}
           />
         <TouchableOpacity
-          onPress={()=> setIndex(1)}
+          onPress={()=> setSchool2()}
         >
           <HStack
             space={2}
@@ -60,7 +86,7 @@ const School = () => {
             }}
           />
         <TouchableOpacity
-          onPress={()=> setIndex(2)}
+          onPress={()=> setSchool3()}
         >
           <HStack
             space={2}
@@ -85,7 +111,7 @@ const School = () => {
             }}
           />
         <TouchableOpacity
-          onPress={()=> setIndex(3)}
+          onPress={()=> setSchool4()}
         >
           <HStack
             space={2}
@@ -105,7 +131,7 @@ const School = () => {
             </Text>
         </Center>
         <TouchableOpacity
-          onPress={()=> setIndex(4)}
+          onPress={()=> setSchoolNone()}
         >
           <HStack
             space={2}

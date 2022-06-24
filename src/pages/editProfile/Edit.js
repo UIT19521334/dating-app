@@ -1,11 +1,57 @@
 import { View, Text, ScrollView, Image, TouchableOpacity, TextInput } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { HStack, Center, VStack, Box } from 'native-base'
 import { COLORS, SIZES } from '../../components/constans/theme'
 import img from "../../assets/img/img1.jpg"
 import Feather from "react-native-vector-icons/Feather"
 import styles from './styles'
-const Edit = ({navigation, route}) => {
+import AsyncStorage from "@react-native-async-storage/async-storage";
+const Edit = ({ navigation, route }) => {
+  const [currWork, setCurrWork] = React.useState("Word Class Tennis Player");
+  const [school, setSchool] = React.useState("JCE, Bangalore");
+  const [photo6, setPhoto6] = React.useState();
+  const [photo5, setPhoto5] = React.useState();
+  // Get work
+  const handleCurrWork = () => {
+    navigation.navigate("CurrentWork")
+  }
+  const handleGetWork = async () => {
+    let data = await AsyncStorage.getItem("WORK");
+    setCurrWork(data);
+  }
+
+  // Get School
+  const handleSchool = () => {
+    navigation.navigate("School")
+  }
+  const handleGetSchool = async () => {
+    let data = await AsyncStorage.getItem("SCHOOL");
+    setSchool(data);
+  }
+
+  // Get photo
+  const handleGetPhoto = async () => {
+    let data = await AsyncStorage.getItem("PHOTO");
+    setPhoto5(data);
+  }
+  // handleGoback
+  useEffect(() => {
+    const update = navigation.addListener('focus', () => {
+      handleGetPhoto();
+      handleGetWork();
+      handleGetSchool();
+    });
+    return () => {
+      update;
+    };
+  }, []);
+  const handlePhoto5 = () => {
+    if (photo5) {
+      setPhoto5()
+    } else (
+      navigation.navigate("AddPhoto")
+    )
+  }
   return (
     <View >
       <ScrollView >
@@ -37,17 +83,19 @@ const Edit = ({navigation, route}) => {
             <Center>
               <Image source={img} style={styles.image1} />
               <TouchableOpacity style={styles.button2} >
-                <Feather name="x" size={20} color={COLORS.white} />
+                <Feather name={"x"} size={20} color={COLORS.white} />
               </TouchableOpacity>
             </Center>
             <Center>
-              <Image style={styles.image2} />
-              <TouchableOpacity style={styles.button2} >
-                <Feather name="plus" size={20} color={COLORS.white} />
+              <Image source={{ uri: photo5 }} style={styles.image2} />
+              <TouchableOpacity style={styles.button2}
+                onPress={() => { handlePhoto5() }}
+              >
+                <Feather name={photo5 ? "x" : "plus"} size={20} color={COLORS.white} />
               </TouchableOpacity>
             </Center>
             <Center>
-              <Image  style={styles.image1} />
+              <Image style={styles.image1} />
               <TouchableOpacity style={styles.button2} >
                 <Feather name="plus" size={20} color={COLORS.white} />
               </TouchableOpacity>
@@ -62,16 +110,16 @@ const Edit = ({navigation, route}) => {
             placeholderTextColor={COLORS.grey}
           />
           <Text style={styles.title}>Current Work</Text>
-          <TouchableOpacity  
-            onPress={() =>{navigation.navigate("CurrentWork")}}
+          <TouchableOpacity
+            onPress={() => handleCurrWork()}
           >
-              <Text style={styles.descButton}>Word Class Tennis Player</Text>
+            <Text style={styles.descButton}>{currWork}</Text>
           </TouchableOpacity>
           <Text style={styles.title}>School</Text>
-          <TouchableOpacity 
-            onPress={() =>{navigation.navigate("School")}}
+          <TouchableOpacity
+            onPress={() => handleSchool()}
           >
-              <Text style={styles.descButton}>JCE, Bangalore</Text>
+            <Text style={styles.descButton}>{school}</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>

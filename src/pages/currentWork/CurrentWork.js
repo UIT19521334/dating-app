@@ -4,13 +4,39 @@ import styles from './styles'
 import { COLORS, SIZES } from '../../components/constans/theme'
 import { Center, HStack } from 'native-base'
 import Entypo from "react-native-vector-icons/Entypo";
-const CurrentWork = () => {
-  const [index, setIndex] = useState(0)
+import AsyncStorage from "@react-native-async-storage/async-storage";
+const CurrentWork = ({navigation,route}) => {
+  const [index, setIndex] = useState(0);
+  const setWork=async()=>{
+    setIndex(0);
+    await AsyncStorage.setItem("WORK","Word Class Tennis Player");
+    navigation.goBack();
+  }
+  const setWork1=async()=>{
+    setIndex(1);
+    await AsyncStorage.setItem("WORK","Software Engineer at GeekyAnts");
+    navigation.goBack();
+  }
+  const setWork2=async()=>{
+    setIndex(2);
+    await AsyncStorage.setItem("WORK","Free lancer");
+    navigation.goBack();
+  }
+  const setWork3=async()=>{
+    setIndex(3);
+    await AsyncStorage.setItem("WORK","St. Francis College");
+    navigation.goBack();
+  }
+  const setWork4=async()=>{
+    setIndex(4);
+    await AsyncStorage.setItem("WORK","None");
+    navigation.goBack();
+  }
   return (
     <View style={{ marginTop: 5, backgroundColor: COLORS.white, height: SIZES.height }} >
       <Center marginTop={5}>
         <TouchableOpacity
-          onPress={()=> setIndex(0)}
+          onPress={()=> setWork()}
         >
           <HStack
             space={2}
@@ -35,7 +61,7 @@ const CurrentWork = () => {
             }}
           />
         <TouchableOpacity
-          onPress={()=> setIndex(1)}
+          onPress={()=> setWork1()}
         >
           <HStack
             space={2}
@@ -60,7 +86,7 @@ const CurrentWork = () => {
             }}
           />
         <TouchableOpacity
-          onPress={()=> setIndex(2)}
+          onPress={()=> setWork2()}
         >
           <HStack
             space={2}
@@ -85,7 +111,7 @@ const CurrentWork = () => {
             }}
           />
         <TouchableOpacity
-          onPress={()=> setIndex(3)}
+          onPress={()=> setWork3()}
         >
           <HStack
             space={2}
@@ -105,7 +131,7 @@ const CurrentWork = () => {
             </Text>
         </Center>
         <TouchableOpacity
-          onPress={()=> setIndex(4)}
+          onPress={()=> setWork4()}
         >
           <HStack
             space={2}
