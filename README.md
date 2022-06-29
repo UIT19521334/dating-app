@@ -1,12 +1,11 @@
-# Meet up social app
-Chuyên đề mobile đề tài mạng xã hội
+# Dating App
+UI demo dating app
 
 ## Mục lục
 - [Chức năng](#chức-năng)
 - [Thư viện và công nghệ](#thư-viện-và-công-nghệ)
-- [Backend](#backend)
 - [Frontend](#frontend)
-- [Database/Diagram](#database-diagram)
+- [Backend](#backend)
 - [Tác giả](#tác-giả)
 ## Chức năng
 - Home
@@ -32,13 +31,9 @@ Chuyên đề mobile đề tài mạng xã hội
 - [React Native](https://reactnative.dev/).
 - [Native Base](https://docs.nativebase.io/)
 ### Backend
-- [Nodejs](https://nodejs.org/en/).
-- [Express](https://expressjs.com/).
-- [Mongoose](https://mongoosejs.com/).
+- [None](https://docs.nativebase.io/)
 ### Database
-- [MongoDB](https://www.mongodb.com/).
-## Database Diagram
-![image](https://user-images.githubusercontent.com/71374867/175806557-e7651e54-5899-45ad-abbe-2adeca7bd16b.png)
+- [AsyncStore](https://www.mongodb.com/).
 ## Tác giả
 - Nguyễn Đức Chí Đạt - 19521334.
 
