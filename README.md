@@ -1,2 +1,44 @@
-# dating-app
-Simple dating app
+# Meet up social app
+Chuyên đề mobile đề tài mạng xã hội
+
+## Mục lục
+- [Chức năng](#chức-năng)
+- [Thư viện và công nghệ](#thư-viện-và-công-nghệ)
+- [Backend](#backend)
+- [Frontend](#frontend)
+- [Database/Diagram](#database-diagram)
+- [Tác giả](#tác-giả)
+## Chức năng
+- Home
+
+  <video src="https://user-images.githubusercontent.com/67258104/176347490-ea7c2962-6d44-45ee-a1d3-0d85fa914400.mp4" alt="..." width="600" />
+
+- Messenger
+
+  <video src="https://user-images.githubusercontent.com/67258104/176347349-33293ed9-a325-4c5a-b797-81e69fa52ee6.mp4" alt="..." width="600" />
+
+- Edit Profile
+
+  <video src="https://user-images.githubusercontent.com/67258104/176347835-b289a491-19ae-4173-a3e7-cb60138c88a4.mp4" alt="..." width="600" />
+
+- Setting
+
+  <video src="https://user-images.githubusercontent.com/67258104/176348164-360582d2-fa4c-4ab1-b12b-79ff0fc2fcd3.mp4" alt="..." width="600" />
+
+
+## Thư viện và công nghệ
+- [React Native CLI](https://reactnative.dev/docs/getting-started).
+### Frontend
+- [React Native](https://reactnative.dev/).
+- [Native Base](https://docs.nativebase.io/)
+### Backend
+- [Nodejs](https://nodejs.org/en/).
+- [Express](https://expressjs.com/).
+- [Mongoose](https://mongoosejs.com/).
+### Database
+- [MongoDB](https://www.mongodb.com/).
+## Database Diagram
+![image](https://user-images.githubusercontent.com/71374867/175806557-e7651e54-5899-45ad-abbe-2adeca7bd16b.png)
+## Tác giả
+- Nguyễn Đức Chí Đạt - 19521334.
+
