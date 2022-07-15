@@ -34,6 +34,7 @@ const Edit = ({ navigation, route }) => {
     let data = await AsyncStorage.getItem("PHOTO");
     setPhoto5(data);
   }
+
   // handleGoback
   useEffect(() => {
     const update = navigation.addListener('focus', () => {
@@ -42,9 +43,10 @@ const Edit = ({ navigation, route }) => {
       handleGetSchool();
     });
     return () => {
-      update;
+      update();
     };
   }, []);
+  
   const handlePhoto5 = () => {
     if (photo5) {
       setPhoto5()
